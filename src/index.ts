@@ -32,7 +32,7 @@ export type LocationFields<UserIdType> = {
     coordinates: [number, number]; // [lng, lat]
   };
   address?: Address;
-  icon: string;
+  icon?: string;
   expiration?: Date;
   createdAt: Date;
   updatedAt: Date;
