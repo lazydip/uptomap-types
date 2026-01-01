@@ -33,7 +33,7 @@ export type LocationFields<UserIdType> = {
   };
   address?: Address;
   icon?: string;
-  deeleted?: boolean;
+  deleted?: boolean;
   expiration?: Date;
   createdAt: Date;
   updatedAt: Date;
