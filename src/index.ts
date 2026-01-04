@@ -39,3 +39,24 @@ export type LocationFields<UserIdType> = {
   updatedAt: Date;
 };
 export type Location = LocationFields<string>;
+
+export type Profile = {
+  originalText: string;
+  correctedText: string;
+  tags: ProfileTags;
+};
+
+export const USER_ROLES = ["user", "admin"] as const;
+export type UserRole = (typeof USER_ROLES)[number];
+
+export type UserFields<LocationIdType> = {
+  name: string;
+  email: string;
+  role: UserRole;
+  password: string;
+  active: boolean;
+  defaultLocation?: LocationIdType | null;
+  profileData?: Profile;
+};
+
+export type User = UserFields<string>;
