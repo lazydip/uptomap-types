@@ -5,7 +5,6 @@ export type Tags = {
 export type LocationTags = Tags & {
     icon: string;
 };
-export type ProfileTags = Tags;
 export type Address = {
     line1: string;
     line2?: string;
@@ -37,7 +36,7 @@ export type Location = LocationFields<string>;
 export type Profile = {
     originalText: string;
     correctedText: string;
-    tags: ProfileTags;
+    tags: Tags;
 };
 export declare const USER_ROLES: readonly ["user", "admin"];
 export type UserRole = (typeof USER_ROLES)[number];

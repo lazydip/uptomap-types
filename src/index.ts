@@ -4,7 +4,6 @@ export type TagsList = string[];
 export type Tags = { tags: TagsList };
 
 export type LocationTags = Tags & { icon: string };
-export type ProfileTags = Tags;
 
 // locations
 // Common
@@ -43,7 +42,7 @@ export type Location = LocationFields<string>;
 export type Profile = {
   originalText: string;
   correctedText: string;
-  tags: ProfileTags;
+  tags: Tags;
 };
 
 export const USER_ROLES = ["user", "admin"] as const;
