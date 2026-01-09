@@ -36,7 +36,7 @@ export type Location = LocationFields<string>;
 export type Profile = {
     originalText: string;
     correctedText: string;
-    tags: Tags;
+    tags: TagsList;
 };
 export declare const USER_ROLES: readonly ["user", "admin"];
 export type UserRole = (typeof USER_ROLES)[number];

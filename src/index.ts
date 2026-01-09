@@ -42,7 +42,7 @@ export type Location = LocationFields<string>;
 export type Profile = {
   originalText: string;
   correctedText: string;
-  tags: Tags;
+  tags: TagsList;
 };
 
 export const USER_ROLES = ["user", "admin"] as const;
