@@ -28,6 +28,7 @@ export type LocationFields<UserIdType> = {
     address?: Address;
     icon?: string;
     deleted?: boolean;
+    default: boolean;
     expiration?: Date;
     createdAt: Date;
     updatedAt: Date;
@@ -46,7 +47,6 @@ export type UserFields<LocationIdType> = {
     role: UserRole;
     password: string;
     active: boolean;
-    defaultLocation?: LocationIdType | null;
     profileData?: Profile;
 };
 export type User = UserFields<string>;

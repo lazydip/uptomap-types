@@ -17,5 +17,8 @@
   "private": false,
   "devDependencies": {
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@uptomap/types": "github:lazydip/uptomap-types"
   }
 }
