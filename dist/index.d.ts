@@ -48,6 +48,8 @@ export type UserFields<UserIdType> = {
     password: string;
     active: boolean;
     profileData?: Profile;
+    createdAt: Date;
+    updatedAt: Date;
 };
 export type User = UserFields<string>;
 export type MessageFields<IdType> = {
