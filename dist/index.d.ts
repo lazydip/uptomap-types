@@ -52,13 +52,25 @@ export type UserFields<UserIdType> = {
     profileData?: Profile;
 } & TimeStamps;
 export type User = UserFields<string>;
-export type MessageFields<IdType> = {
-    location: IdType;
+export type MessageContainerType = "location" | "conversation";
+export type MessageBaseFields<IdType> = {
+    containerType: MessageContainerType;
     user: IdType;
     text: string;
     parent?: IdType;
     deleted: boolean;
     edited: boolean;
 } & TimeStamps;
+export type LocationMessageFields<IdType> = MessageBaseFields<IdType> & {
+    containerType: "location";
+    location: IdType;
+    conversation?: never;
+};
+export type ConversationMessageFields<IdType> = MessageBaseFields<IdType> & {
+    containerType: "conversation";
+    conversation: IdType;
+    location?: never;
+};
+export type MessageFields<IdType> = LocationMessageFields<IdType> | ConversationMessageFields<IdType>;
 export type Message = MessageFields<string>;
 export {};
