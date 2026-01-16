@@ -49,7 +49,7 @@ export type Profile = {
 export const USER_ROLES = ["user", "admin"] as const;
 export type UserRole = (typeof USER_ROLES)[number];
 
-export type UserFields<LocationIdType> = {
+export type UserFields<UserIdType> = {
   name: string;
   email: string;
   role: UserRole;
@@ -59,3 +59,18 @@ export type UserFields<LocationIdType> = {
 };
 
 export type User = UserFields<string>;
+
+// messages
+export type MessageFields<IdType> = {
+  location: IdType;
+  user: IdType;
+  text: string;
+  parent?: IdType;
+  deleted: boolean;
+  edited: boolean;
+
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type Message = MessageFields<string>;
