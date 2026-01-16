@@ -1,3 +1,7 @@
+type TimeStamps = {
+    createdAt: Date;
+    updatedAt: Date;
+};
 export type TagsList = string[];
 export type Tags = {
     tags: TagsList;
@@ -30,9 +34,7 @@ export type LocationFields<UserIdType> = {
     deleted?: boolean;
     default: boolean;
     expiration?: Date;
-    createdAt: Date;
-    updatedAt: Date;
-};
+} & TimeStamps;
 export type Location = LocationFields<string>;
 export type Profile = {
     originalText: string;
@@ -48,9 +50,7 @@ export type UserFields<UserIdType> = {
     password: string;
     active: boolean;
     profileData?: Profile;
-    createdAt: Date;
-    updatedAt: Date;
-};
+} & TimeStamps;
 export type User = UserFields<string>;
 export type MessageFields<IdType> = {
     location: IdType;
@@ -59,7 +59,6 @@ export type MessageFields<IdType> = {
     parent?: IdType;
     deleted: boolean;
     edited: boolean;
-    createdAt: Date;
-    updatedAt: Date;
-};
+} & TimeStamps;
 export type Message = MessageFields<string>;
+export {};

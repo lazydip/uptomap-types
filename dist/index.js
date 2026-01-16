@@ -1,5 +1,5 @@
 "use strict";
-// tags
+// general types
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.USER_ROLES = exports.LOCATION_TYPES = void 0;
 // Location types
