@@ -66,7 +66,8 @@ export type UserFields<UserIdType> = {
 export type User = UserFields<string>;
 
 // messages
-export type MessageContainerType = "location" | "conversation";
+export const MESSAGE_CONTAINER_TYPES = ["location", "conversation"] as const;
+export type MessageContainerType = (typeof MESSAGE_CONTAINER_TYPES)[number];
 
 export type MessageBaseFields<IdType> = {
   containerType: MessageContainerType;
@@ -89,8 +90,6 @@ export type ConversationMessageFields<IdType> = MessageBaseFields<IdType> & {
   location?: never;
 };
 
-export type MessageFields<IdType> =
-  | LocationMessageFields<IdType>
-  | ConversationMessageFields<IdType>;
+export type MessageFields<IdType> = LocationMessageFields<IdType> | ConversationMessageFields<IdType>;
 
 export type Message = MessageFields<string>;

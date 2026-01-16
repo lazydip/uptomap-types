@@ -52,7 +52,8 @@ export type UserFields<UserIdType> = {
     profileData?: Profile;
 } & TimeStamps;
 export type User = UserFields<string>;
-export type MessageContainerType = "location" | "conversation";
+export declare const MESSAGE_CONTAINER_TYPES: readonly ["location", "conversation"];
+export type MessageContainerType = (typeof MESSAGE_CONTAINER_TYPES)[number];
 export type MessageBaseFields<IdType> = {
     containerType: MessageContainerType;
     user: IdType;
