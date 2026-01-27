@@ -44,6 +44,7 @@ export type Profile = {
 export declare const USER_ROLES: readonly ["user", "admin"];
 export type UserRole = (typeof USER_ROLES)[number];
 export type UserFields<UserIdType> = {
+    _id: UserIdType;
     name: string;
     email: string;
     role: UserRole;
@@ -55,6 +56,7 @@ export type User = UserFields<string>;
 export declare const MESSAGE_CONTAINER_TYPES: readonly ["location", "conversation"];
 export type MessageContainerType = (typeof MESSAGE_CONTAINER_TYPES)[number];
 export type MessageBaseFields<IdType> = {
+    _id: IdType;
     containerType: MessageContainerType;
     user: IdType;
     text: string;

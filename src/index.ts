@@ -55,6 +55,7 @@ export const USER_ROLES = ["user", "admin"] as const;
 export type UserRole = (typeof USER_ROLES)[number];
 
 export type UserFields<UserIdType> = {
+  _id: UserIdType;
   name: string;
   email: string;
   role: UserRole;
@@ -70,6 +71,7 @@ export const MESSAGE_CONTAINER_TYPES = ["location", "conversation"] as const;
 export type MessageContainerType = (typeof MESSAGE_CONTAINER_TYPES)[number];
 
 export type MessageBaseFields<IdType> = {
+  _id: IdType;
   containerType: MessageContainerType;
   user: IdType;
   text: string;
