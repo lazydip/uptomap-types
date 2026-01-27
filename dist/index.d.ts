@@ -44,8 +44,8 @@ export type Profile = {
 };
 export declare const USER_ROLES: readonly ["user", "admin"];
 export type UserRole = (typeof USER_ROLES)[number];
-export type UserFields<UserIdType> = {
-    _id: UserIdType;
+export type UserFields<IdType> = {
+    _id: IdType;
     name: string;
     email: string;
     role: UserRole;
