@@ -75,6 +75,13 @@ export type ConversationMessageFields<IdType> = MessageBaseFields<IdType> & {
     conversation: IdType;
     location?: never;
 };
+export type Author = {
+    id: string;
+    name: string;
+};
+export type MessageView = Omit<MessageBaseFields<string>, "user"> & {
+    user: Author;
+};
 export type MessageFields<IdType> = LocationMessageFields<IdType> | ConversationMessageFields<IdType>;
 export type Message = MessageFields<string>;
 export {};
