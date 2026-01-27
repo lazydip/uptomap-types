@@ -27,8 +27,9 @@ export type Address = {
 export const LOCATION_TYPES = ["user", "mark", "live"] as const;
 export type LocationType = (typeof LOCATION_TYPES)[number];
 
-export type LocationFields<UserIdType> = {
-  user: UserIdType;
+export type LocationFields<IdType> = {
+  _id: IdType;
+  user: IdType;
   type: LocationType;
   title?: string;
   userText: string;
