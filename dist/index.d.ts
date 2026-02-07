@@ -21,7 +21,7 @@ export declare const LOCATION_TYPES: readonly ["user", "mark", "live"];
 export type LocationType = (typeof LOCATION_TYPES)[number];
 export type LocationFields<IdType> = {
     _id: IdType;
-    user: IdType;
+    user: User;
     type: LocationType;
     title?: string;
     userText: string;
